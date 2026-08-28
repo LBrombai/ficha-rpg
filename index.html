@@ -19,23 +19,30 @@
             <tr>
                 <td>
                     <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome">
+                    <input type="text" id="nome" name="nome" placeholder="Ex. Aragorn" required>
                 </td>  
 
                 <td>
                     <label for="idade">Idade:</label>
-                    <input type="number" id="idade" name="idade" required>
+                    <input type="number" id="idade" name="idade" placeholder="Ex. 88" required>
                 </td>
             </tr>
             <tr>
                 <td>
                     <label for="classe">Classe:</label>
-                    <input type="text" name="classe" id="classe">
+                    <select name="classe" id="classe" required>
+                        <option value="">Selecione uma classe</option>
+                        <option value="guerreiro">Guerreiro</option>
+                        <option value="mago">Mago</option>
+                        <option value="ladino">Ladino</option>
+                        <option value="druida">Druida</option>
+                        <option value="arqueiro">Arqueiro</option>
+                    </select>
                 </td>
 
                 <td>
-                    <label for="nivel">Nivel:</label>
-                    <input type="number" name="nivel" id="nivel" min="1">
+                    <label for="nivel">Nível:</label>
+                    <input type="number" name="nivel" id="nivel" min="1" max="16" placeholder="Ex. 8" required>
                 </td>
             </tr>
         </table>
@@ -48,20 +55,20 @@
         <input type="file"
         id="foto"
         name="foto"
-        accept=".jpg,.jpeg,.png"
+        accept=".jpg,.jpeg,.png" required
         >
 
         </fieldset>
 
         <fieldset>
 
-        <h2>Biografia</h2>
+        <legend>Biografia</legend>
 
-        <label for="biografia">Conte-nos sua historia</label>
+        <label for="biografia">Conte-nos sua história</label>
 
         <br>
 
-        <textarea id="biografia" name="biografia" rows="15" cols="50"></textarea>
+        <textarea id="biografia" name="biografia" rows="15" cols="50" placeholder="Escreva aqui a biografia do seu personagem..."></textarea>
 
         </fieldset>
 
@@ -75,37 +82,44 @@
 
                 <tr>
                     <th>Atributo</th>
+                    <th>Descrição</th>
                     <th>Valor</th>
                 </tr>
 
                 <tr>
-                    <td>Constituição:</td>
-                    <td><input type="number" name="constituicao" min="1" max="20" required></td>
+                    <th scope="row">Constituição:</th>
+                    <td>Determina saúde e resistência</td>
+                    <td><input type="number" name="constituicao" min="1" max="20" value="10" required></td>
                 </tr>
 
                 <tr>
-                    <td>Força:</td>
-                    <td><input type="number" name="forca" min="1" max="20" required></td>
+                    <th scope="row">Força:</th>
+                    <td>Determina poder físico</td>
+                    <td><input type="number" name="forca" min="1" max="20" value="10" required></td>
                 </tr>
 
                 <tr>
-                    <td>Destreza:</td>
-                    <td><input type="number" name="destreza" min="1" max="20" required></td>
+                    <th scope="row">Destreza:</th>
+                    <td>Determina agilidade e precisão</td>
+                    <td><input type="number" name="destreza" min="1" max="20" value="10" required></td>
                 </tr>
 
                 <tr>
-                    <td>Inteligência:</td>
-                    <td><input type="number" name="inteligencia" min="1" max="20" required></td>
+                    <th scope="row">Inteligência:</th>
+                    <td>Determina poder mágico</td>
+                    <td><input type="number" name="inteligencia" min="1" max="20" value="10" required></td>
                 </tr>
 
                 <tr>
-                    <td>Sabedoria:</td>
-                    <td><input type="number" name="sabedoria" min="1" max="20" required></td>
+                    <th scope="row">Sabedoria:</th>
+                    <td>Determina percepção e intuição</td>
+                    <td><input type="number" name="sabedoria" min="1" max="20" value="10" required></td>
                 </tr>
 
                 <tr>
-                    <td>Carisma:</td>
-                    <td><input type="number" name="carisma" min="1" max="20" required></td>
+                    <th scope="row">Carisma:</th>
+                    <td>Determina persuasão e presença</td>
+                    <td><input type="number" name="carisma" min="1" max="20" value="10" required></td>
                 </tr>
 
             </table>
@@ -115,34 +129,46 @@
 
             <legend>Itens</legend>
 
-        <label for="item">Quais itens carregas?</label>
 
         <table>
             <tr>
-            <th>Nome</th>
-            <th>Quantidade</th>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Remover</th>
             </tr>
 
             <tr>
-                <td><input type="text" name="item"></td>
-                <td><input type="number" name="quantity" min="0"></td>
+                <th scope="row">1</th>
+                <td><input type="text" id="item1" name="item" placeholder="Ex. Espada Longa"></td>
+                <td><input type="number" id="quantity1" name="quantity" min="0" max="99" value="0"></td>
+                <td><input type="text" id="description1" name="description" placeholder="Espada longa e afiada"></td>
+                <td><button type="button">Remover</button></td>
             </tr>
 
             <tr>
-                <td><input type="text" name="item"></td>
-                <td><input type="number" name="quantity" min="0"></td>
+                <th scope="row">2</th>
+                <td><input type="text" id="item2" name="item" placeholder="Ex. Poção de cura"></td>
+                <td><input type="number" id="quantity2" name="quantity" min="0" max="99" value="0"></td>
+                <td><input type="text" id="description2" name="description" placeholder="Restaura 50 Hp"></td>
+                <td><button type="button">Remover</button></td>
             </tr>
 
             <tr>
-                <td><input type="text" name="item"></td>
-                <td><input type="number" name="quantity" min="0"></td>
+                <th scope="row">3</th>
+                <td><input type="text" id="item3" name="item" placeholder="Tocha"></td>
+                <td><input type="number" id="quantity3" name="quantity" min="0" max="99" value="0"></td>
+                <td><input type="text" id="description3" name="description" placeholder="Ilumina ao seu redor"></td>
+                <td><button type="button">Remover</button></td>
             </tr>
 
         </table>
+        <button type="button">Adicionar novo item</button>
             <br><br>
             <button type="submit">Salvar Ficha</button>
+        </fieldset>
     </form>
-    </fieldset>
     </main>
 
     
