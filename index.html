@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Ficha RPG</title>
 </head>
 <body>
@@ -25,6 +26,7 @@
                 <td>
                     <label for="idade">Idade:</label>
                     <input type="number" id="idade" name="idade" placeholder="Ex. 88" required>
+                    <p id="ageError"></p>
                 </td>
             </tr>
             <tr>
@@ -57,6 +59,7 @@
         name="foto"
         accept=".jpg,.jpeg,.png" required
         >
+        <p id="photoError"></p>
 
         </fieldset>
 
@@ -78,6 +81,8 @@
 
             <legend>Atributos</legend>
 
+            <p id="attributeError"></p>
+
         <table>
 
                 <tr>
@@ -89,37 +94,37 @@
                 <tr>
                     <th scope="row">Constituição:</th>
                     <td>Determina saúde e resistência</td>
-                    <td><input type="number" name="constituicao" min="1" max="20" value="10" required></td>
+                    <td><input type="number" class="attribute" name="constituicao" min="1" max="20" value="10" required></td>
                 </tr>
 
                 <tr>
                     <th scope="row">Força:</th>
                     <td>Determina poder físico</td>
-                    <td><input type="number" name="forca" min="1" max="20" value="10" required></td>
+                    <td><input type="number" class="attribute" name="forca" min="1" max="20" value="10" required></td>
                 </tr>
 
                 <tr>
                     <th scope="row">Destreza:</th>
                     <td>Determina agilidade e precisão</td>
-                    <td><input type="number" name="destreza" min="1" max="20" value="10" required></td>
+                    <td><input type="number" class="attribute" name="destreza" min="1" max="20" value="10" required></td>
                 </tr>
 
                 <tr>
                     <th scope="row">Inteligência:</th>
                     <td>Determina poder mágico</td>
-                    <td><input type="number" name="inteligencia" min="1" max="20" value="10" required></td>
+                    <td><input type="number" class="attribute" name="inteligencia" min="1" max="20" value="10" required></td>
                 </tr>
 
                 <tr>
                     <th scope="row">Sabedoria:</th>
                     <td>Determina percepção e intuição</td>
-                    <td><input type="number" name="sabedoria" min="1" max="20" value="10" required></td>
+                    <td><input type="number" class="attribute" name="sabedoria" min="1" max="20" value="10" required></td>
                 </tr>
 
                 <tr>
                     <th scope="row">Carisma:</th>
                     <td>Determina persuasão e presença</td>
-                    <td><input type="number" name="carisma" min="1" max="20" value="10" required></td>
+                    <td><input type="number" class="attribute" name="carisma" min="1" max="20" value="10" required></td>
                 </tr>
 
             </table>
@@ -130,7 +135,7 @@
             <legend>Itens</legend>
 
 
-        <table>
+        <table id="itemsTable">
             <tr>
             <th scope="col">#</th>
             <th scope="col">Nome</th>
@@ -164,13 +169,13 @@
             </tr>
 
         </table>
-        <button type="button">Adicionar novo item</button>
+        <button type="button" id="addItem">Adicionar novo item</button>
             <br><br>
             <button type="submit">Salvar Ficha</button>
         </fieldset>
     </form>
     </main>
 
-    
+    <script src="script.js"></script>
 </body>
 </html>
