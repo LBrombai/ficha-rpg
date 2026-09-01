@@ -66,14 +66,61 @@ addItem.addEventListener("click", function(){
     const itemCell = document.createElement("td")
     const newInput = document.createElement("input")
 
+    const newQtdTd = document.createElement("td")
+    const newQtdInp = document.createElement("input")
+
+    const newDescriptionTd = document.createElement("td")
+    const newDescriptionInp = document.createElement("input")
+
+    const newRemoveTd = document.createElement("td")
+    const newRemoveButton = document.createElement("button")
+
+
+
+
     newCell.setAttribute("scope", "row")
+
+    let newIdNumber = i
     newCell.textContent = i++
     
     newInput.setAttribute("type", "text")
+    newInput.setAttribute("placeholder", "Adicione um item")
+    newInput.setAttribute("name", "item")
+    newInput.setAttribute("id", "item" + newIdNumber)
+
+    newQtdInp.setAttribute("type", "number")
+    newQtdInp.setAttribute("name", "quantity")
+    newQtdInp.setAttribute("id", "quantity" + newIdNumber)
+    newQtdInp.setAttribute("min", "0")
+    newQtdInp.setAttribute("max", "99")
+    newQtdInp.value = 0
+
+    newDescriptionInp.setAttribute("type", "text")
+    newDescriptionInp.setAttribute("name", "description")
+    newDescriptionInp.setAttribute("id", "description" + newIdNumber)
+    newDescriptionInp.setAttribute("placeholder", "Descrição do item")
+
+    newRemoveButton.setAttribute("type", "button")
+    newRemoveButton.textContent = "Remover"
+
 
     itemCell.appendChild(newInput)
     newLine.appendChild(newCell)
+
     newLine.appendChild(itemCell)
+
+    newQtdTd.appendChild(newQtdInp)
+    newLine.appendChild(newQtdTd)
+
+    newDescriptionTd.appendChild(newDescriptionInp)
+    newLine.appendChild(newDescriptionTd)
+
+    newRemoveTd.appendChild(newRemoveButton)
+    newLine.appendChild(newRemoveTd)
+
     itemsTable.appendChild(newLine)
+
+
+    newRemoveButton.addEventListener("click", () => newRemoveButton.parentElement.parentElement.remove())
 })
 
