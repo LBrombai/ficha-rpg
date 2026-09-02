@@ -1,4 +1,77 @@
+/* Reset Css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body{
-    background-color: rgb(11, 11, 11);
+    background-color: #000000;
     color: #C4B395;
+    font-family: Arial, sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form {
+    width: 100%;
+}
+
+fieldset{
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #33322E;
+    border-radius: 15px;
+    background-color: #111111;
+}
+
+label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+button{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #1B1714;
+    color: #E0CAA5;
+    border: 1px solid #3F3C35;
+    font-size: 18px;
+}
+
+.character-info-container{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.character-field{
+    margin: 10px;
+}
+
+
+.character-info{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #0A0A0A;
+    color: #85817E;
+    border: 1px solid #33322E;
 }
