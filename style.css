@@ -12,11 +12,16 @@ body{
     font-family: Arial, sans-serif;
 }
 
+header,legend,button,label{
+    font-family: "Cinzel", serif;
+}
+
 header{
     display: flex;
     justify-content: center;
-    align-items: center;
     font-size: 32px;
+    font-weight: 700;
+    align-items: center;
     padding: 20px;
 }
 
@@ -42,18 +47,28 @@ fieldset{
     background-color: #111111;
 }
 
+legend{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    font-weight: 700;
+}
+
 label{
+    font-size: 16;
+    font-weight: 500;
     display: block;
     margin-bottom: 10px;
 }
 
 button{
+    font-size: 18px;
+    font-weight: 600;
     padding: 10px;
     border-radius: 5px;
     background-color: #1B1714;
     color: #E0CAA5;
     border: 1px solid #3F3C35;
-    font-size: 18px;
 }
 
 .character-info-container{
@@ -63,7 +78,7 @@ button{
 }
 
 .character-field{
-    margin: 10px;
+    margin-bottom: 15px;
 }
 
 
@@ -74,4 +89,16 @@ button{
     background-color: #0A0A0A;
     color: #85817E;
     border: 1px solid #33322E;
+}
+
+.biography-input{
+    width: 100%;
+    min-height: 250px;
+    resize: vertical;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #0A0A0A;
+    color: #85817E;
+    border: 1px solid #33322E;
+
 }

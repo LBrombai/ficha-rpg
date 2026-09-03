@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
     <title>Ficha RPG</title>
 </head>
@@ -146,29 +153,13 @@
                 <td><input type="text" id="item1" name="item" placeholder="Ex. Espada Longa"></td>
                 <td><input type="number" id="quantity1" name="quantity" min="0" max="99" value="0"></td>
                 <td><input type="text" id="description1" name="description" placeholder="Espada longa e afiada"></td>
-                <td><button type="button">Remover</button></td>
-            </tr>
-
-            <tr>
-                <th scope="row">2</th>
-                <td><input type="text" id="item2" name="item" placeholder="Ex. Poção de cura"></td>
-                <td><input type="number" id="quantity2" name="quantity" min="0" max="99" value="0"></td>
-                <td><input type="text" id="description2" name="description" placeholder="Restaura 50 Hp"></td>
-                <td><button type="button">Remover</button></td>
-            </tr>
-
-            <tr>
-                <th scope="row">3</th>
-                <td><input type="text" id="item3" name="item" placeholder="Tocha"></td>
-                <td><input type="number" id="quantity3" name="quantity" min="0" max="99" value="0"></td>
-                <td><input type="text" id="description3" name="description" placeholder="Ilumina ao seu redor"></td>
-                <td><button type="button">Remover</button></td>
+                <td></td>
             </tr>
 
         </table>
-        <button type="button" id="addItem">Adicionar novo item</button>
+        <button type="button" id="addItem"><i class="fa-solid fa-plus"></i>Adicionar novo item</button>
             <br><br>
-            <button type="submit">Salvar Ficha</button>
+            <button type="submit"><i class="fa-regular fa-floppy-disk"></i>Salvar Ficha</button>
         </fieldset>
     </form>
     </main>

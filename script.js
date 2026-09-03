@@ -58,7 +58,7 @@ formulario.addEventListener("submit", function(event){
 
 //Add Item Button
 
-let i = 4
+let i = 2
 
 addItem.addEventListener("click", function(){
     const newLine = document.createElement("tr")
@@ -73,9 +73,17 @@ addItem.addEventListener("click", function(){
     const newDescriptionInp = document.createElement("input")
 
     const newRemoveTd = document.createElement("td")
+    
+    
+    
     const newRemoveButton = document.createElement("button")
-
-
+    const trashIcon = document.createElement("i")
+    newRemoveButton.setAttribute("type", "button")
+    trashIcon.classList.add("fa-solid", "fa-trash")
+    newRemoveButton.appendChild(trashIcon)
+    newRemoveButton.append("Remover")
+    newRemoveTd.appendChild(newRemoveButton)
+    newLine.appendChild(newRemoveTd)
 
 
     newCell.setAttribute("scope", "row")
@@ -100,8 +108,10 @@ addItem.addEventListener("click", function(){
     newDescriptionInp.setAttribute("id", "description" + newIdNumber)
     newDescriptionInp.setAttribute("placeholder", "Descrição do item")
 
-    newRemoveButton.setAttribute("type", "button")
-    newRemoveButton.textContent = "Remover"
+  
+
+
+    console.log(trashIcon.className)
 
 
     itemCell.appendChild(newInput)
@@ -115,8 +125,8 @@ addItem.addEventListener("click", function(){
     newDescriptionTd.appendChild(newDescriptionInp)
     newLine.appendChild(newDescriptionTd)
 
-    newRemoveTd.appendChild(newRemoveButton)
-    newLine.appendChild(newRemoveTd)
+
+
 
     itemsTable.appendChild(newLine)
 
