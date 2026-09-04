@@ -1,251 +1,338 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap"
+        />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        />
 
-    <link rel="stylesheet" href="style.css">
-    <title>Ficha RPG</title>
-</head>
-<body>
-    <header>
-    <h1>Ficha do Personagem</h1>
-    </header>
+        <link rel="stylesheet" href="style.css" />
+        <title>Ficha RPG</title>
+    </head>
+    <body>
+        <header>
+            <h1>
+                <i class="fa-solid fa-dice-d20"></i>
+                Ficha RPG
+                <i class="fa-solid fa-dice-d20"></i>
+            </h1>
+            <p>Crie e registre seu personagem</p>
+        </header>
 
-    <main>
-    <form>
-        <fieldset>
-            <legend>Informações do Personagem</legend>
+        <main>
+            <form>
+                <fieldset>
+                    <legend>Informações do Personagem</legend>
 
-        <div class="character-info-container">
-            <div class="character-field">
-                    <label for="nome">Nome:</label>
-                    <input type="text" class="character-info" id="nome" name="nome" placeholder="Ex. Aragorn" required>
-            </div>
+                    <div class="character-info-container">
+                        <div class="character-field">
+                            <label for="nome">Nome</label>
+                            <input
+                                type="text"
+                                class="character-info"
+                                id="nome"
+                                name="nome"
+                                placeholder="Ex. Aragorn"
+                                required
+                            />
+                        </div>
 
-            <div class="character-field">
-                    <label for="idade">Idade:</label>
-                    <input type="number" class="character-info" id="idade" name="idade" placeholder="Ex. 88" required>
-                    <p id="ageError"></p>
-            </div>
-            
-            
-            <div class="character-field">
-                    <label for="classe">Classe:</label>
-                    <select name="classe" class="character-info" id="classe" required>
-                        <option value="">Selecione uma classe</option>
-                        <option value="guerreiro">Guerreiro</option>
-                        <option value="mago">Mago</option>
-                        <option value="ladino">Ladino</option>
-                        <option value="druida">Druida</option>
-                        <option value="arqueiro">Arqueiro</option>
-                    </select>
-            </div>
+                        <div class="character-field">
+                            <label for="idade">Idade</label>
+                            <input
+                                type="number"
+                                class="character-info"
+                                id="idade"
+                                name="idade"
+                                placeholder="Ex. 88"
+                                required
+                            />
+                            <p id="ageError"></p>
+                        </div>
 
-            <div class="character-field">
-                    <label for="nivel">Nível:</label>
-                    <input type="number" name="nivel" class="character-info" id="nivel" min="1" max="16" placeholder="Ex. 8" required>
-            </div>
+                        <div class="character-field">
+                            <label for="classe">Classe</label>
+                            <select name="classe" class="character-info" id="classe" required>
+                                <option value="">Selecione uma classe</option>
+                                <option value="guerreiro">Guerreiro</option>
+                                <option value="mago">Mago</option>
+                                <option value="ladino">Ladino</option>
+                                <option value="druida">Druida</option>
+                                <option value="arqueiro">Arqueiro</option>
+                            </select>
+                        </div>
 
-        </div>
-        
-        <br>
+                        <div class="character-field">
+                            <label for="nivel">Nível</label>
+                            <input
+                                type="number"
+                                name="nivel"
+                                class="character-info"
+                                id="nivel"
+                                min="1"
+                                max="16"
+                                placeholder="Ex. 8"
+                                required
+                            />
+                        </div>
+                    </div>
 
-        <label for="foto">Escolha uma foto</label>
+                    <div class="photo-field">
+                        <label for="foto" class="photo-title">Foto do personagem</label>
 
+                        <input
+                            type="file"
+                            id="foto"
+                            name="foto"
+                            accept=".jpg,.jpeg,.png"
+                            required
+                        />
 
-        <input type="file"
-        id="foto"
-        name="foto"
-        accept=".jpg,.jpeg,.png" required
-        >
-        <p id="photoError"></p>
+                        <p id="photoError"></p>
+                    </div>
+                </fieldset>
 
-        </fieldset>
+                <fieldset>
+                    <legend>Biografia</legend>
 
-        <fieldset>
+                    <label for="biografia">Conte-nos sua história</label>
 
-        <legend>Biografia</legend>
+                    <textarea
+                        id="biografia"
+                        class="biography-input"
+                        name="biografia"
+                        rows="15"
+                        cols="50"
+                        placeholder="Escreva aqui a biografia do seu personagem..."
+                    ></textarea>
+                </fieldset>
 
-        <label for="biografia">Conte-nos sua história</label>
+                <fieldset>
+                    <legend>Atributos</legend>
 
-        <textarea id="biografia" class="biography-input" name="biografia" rows="15" cols="50" placeholder="Escreva aqui a biografia do seu personagem..."></textarea>
+                    <p id="attributeError"></p>
 
-        </fieldset>
+                    <div class="attributes-container">
+                        <div class="attributes-header">
+                            <span>Atributo</span>
+                            <span>Descrição</span>
+                            <span>Valor</span>
+                        </div>
 
+                        <div class="attribute-row">
+                            <span>Constituição:</span>
+                            <span>Determina a saúde e resistência</span>
+                            <div class="number-input">
+                                <input
+                                    type="number"
+                                    class="attribute"
+                                    name="constituicao"
+                                    min="1"
+                                    max="20"
+                                    value="10"
+                                    required
+                                />
 
+                                <div class="number-controls">
+                                    <button type="button" class="number-up">▲</button>
+                                    <button type="button" class="number-down">▼</button>
+                                </div>
+                            </div>
+                        </div>
 
-<fieldset>
+                        <div class="attribute-row">
+                            <span>Força:</span>
+                            <span>Determina o poder físico</span>
+                            <div class="number-input">
+                                <input
+                                    type="number"
+                                    class="attribute"
+                                    name="forca"
+                                    min="1"
+                                    max="20"
+                                    value="10"
+                                    required
+                                />
 
-    <legend>Atributos</legend>
+                                <div class="number-controls">
+                                    <button type="button" class="number-up">▲</button>
+                                    <button type="button" class="number-down">▼</button>
+                                </div>
+                            </div>
+                        </div>
 
-    <p id="attributeError"></p>
+                        <div class="attribute-row">
+                            <span>Destreza:</span>
+                            <span>Determina a agilidade e precisão</span>
+                            <div class="number-input">
+                                <input
+                                    type="number"
+                                    class="attribute"
+                                    name="destreza"
+                                    min="1"
+                                    max="20"
+                                    value="10"
+                                    required
+                                />
 
-    <div class="attributes-container">
+                                <div class="number-controls">
+                                    <button type="button" class="number-up">▲</button>
+                                    <button type="button" class="number-down">▼</button>
+                                </div>
+                            </div>
+                        </div>
 
-        <div class="attributes-header">
-            <span>Atributo</span>
-            <span>Descrição</span>
-            <span>Valor</span>
-        </div>
+                        <div class="attribute-row">
+                            <span>Inteligência:</span>
+                            <span>Determina o poder mágico</span>
+                            <div class="number-input">
+                                <input
+                                    type="number"
+                                    class="attribute"
+                                    name="inteligencia"
+                                    min="1"
+                                    max="20"
+                                    value="10"
+                                    required
+                                />
 
-        <div class="attribute-row">
-            <span>Constituição:</span>
-            <span>Determina saúde e resistência</span>
-            <input
-                type="number"
-                class="attribute"
-                name="constituicao"
-                min="1"
-                max="20"
-                value="10"
-                required
-            >
-        </div>
+                                <div class="number-controls">
+                                    <button type="button" class="number-up">▲</button>
+                                    <button type="button" class="number-down">▼</button>
+                                </div>
+                            </div>
+                        </div>
 
-        <div class="attribute-row">
-            <span>Força:</span>
-            <span>Determina poder físico</span>
-            <input
-                type="number"
-                class="attribute"
-                name="forca"
-                min="1"
-                max="20"
-                value="10"
-                required
-            >
-        </div>
+                        <div class="attribute-row">
+                            <span>Sabedoria:</span>
+                            <span>Determina a percepção e intuição</span>
+                            <div class="number-input">
+                                <input
+                                    type="number"
+                                    class="attribute"
+                                    name="sabedoria"
+                                    min="1"
+                                    max="20"
+                                    value="10"
+                                    required
+                                />
 
-        <div class="attribute-row">
-            <span>Destreza:</span>
-            <span>Determina agilidade e precisão</span>
-            <input
-                type="number"
-                class="attribute"
-                name="destreza"
-                min="1"
-                max="20"
-                value="10"
-                required
-            >
-        </div>
+                                <div class="number-controls">
+                                    <button type="button" class="number-up">▲</button>
+                                    <button type="button" class="number-down">▼</button>
+                                </div>
+                            </div>
+                        </div>
 
-        <div class="attribute-row">
-            <span>Inteligência:</span>
-            <span>Determina poder mágico</span>
-            <input
-                type="number"
-                class="attribute"
-                name="inteligencia"
-                min="1"
-                max="20"
-                value="10"
-                required
-            >
-        </div>
+                        <div class="attribute-row">
+                            <span>Carisma:</span>
+                            <span>Determina a persuasão e presença</span>
+                            <div class="number-input">
+                                <input
+                                    type="number"
+                                    class="attribute"
+                                    name="carisma"
+                                    min="1"
+                                    max="20"
+                                    value="10"
+                                    required
+                                />
 
-        <div class="attribute-row">
-            <span>Sabedoria:</span>
-            <span>Determina percepção e intuição</span>
-            <input
-                type="number"
-                class="attribute"
-                name="sabedoria"
-                min="1"
-                max="20"
-                value="10"
-                required
-            >
-        </div>
+                                <div class="number-controls">
+                                    <button type="button" class="number-up">▲</button>
+                                    <button type="button" class="number-down">▼</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
 
-        <div class="attribute-row">
-            <span>Carisma:</span>
-            <span>Determina persuasão e presença</span>
-            <input
-                type="number"
-                class="attribute"
-                name="carisma"
-                min="1"
-                max="20"
-                value="10"
-                required
-            >
-        </div>
+                <fieldset>
+                    <legend>Itens</legend>
 
-    </div>
+                    <div class="items-container">
+                        <div class="items-header">
+                            <span>#</span>
+                            <span>Nome</span>
+                            <span>Quantidade</span>
+                            <span>Descrição</span>
+                            <span></span>
+                        </div>
 
-</fieldset>
+                        <div class="item-row">
+                            <span>1</span>
 
-        <fieldset>
+                            <div class="item-field">
+                                <label for="item1">Nome</label>
+                                <input
+                                    type="text"
+                                    id="item1"
+                                    name="item"
+                                    placeholder="Ex. Espada Longa"
+                                />
+                            </div>
 
-            <legend>Itens</legend>
+                            <div class="item-field">
+                                <label for="quantity1">Quantidade</label>
 
+                                <div class="number-input">
+                                    <input
+                                        type="number"
+                                        id="quantity1"
+                                        name="quantity"
+                                        min="0"
+                                        max="99"
+                                        value="0"
+                                    />
 
-        <div class="items-container">
+                                    <div class="number-controls">
+                                        <button type="button" class="number-up">▲</button>
+                                        <button type="button" class="number-down">▼</button>
+                                    </div>
+                                </div>
+                            </div>
 
-            <div class="items-header">
-            <span>#</span>
-            <span>Nome</span>
-            <span>Quantidade</span>
-            <span>Descrição</span>
-            <span>Remover</span>
-            </div>
+                            <div class="item-field">
+                                <label for="description1">Descrição</label>
+                                <input
+                                    type="text"
+                                    id="description1"
+                                    name="description"
+                                    placeholder="Espada longa e afiada"
+                                />
+                            </div>
 
-            <div class="item-row">
+                            <span></span>
+                        </div>
+                    </div>
 
-    <span>1</span>
+                    <button type="button" id="addItem">
+                        <i class="fa-solid fa-plus"></i>Adicionar item
+                    </button>
+                    <br /><br />
+                    <button type="submit">
+                        <i class="fa-regular fa-floppy-disk"></i>Salvar Ficha
+                    </button>
+                </fieldset>
+            </form>
+        </main>
 
-    <div class="item-field">
-        <label for="item1">Nome</label>
-        <input
-            type="text"
-            id="item1"
-            name="item"
-            placeholder="Ex. Espada Longa"
-        >
-    </div>
+        <footer>
+            <p>Salve sua ficha e continue sua jornada!</p>
+        </footer>
 
-    <div class="item-field">
-        <label for="quantity1">Quantidade</label>
-        <input
-            type="number"
-            id="quantity1"
-            name="quantity"
-            min="0"
-            max="99"
-            value="0"
-        >
-    </div>
+        <div id="toast" class="toast">Ficha salva com sucesso!</div>
 
-    <div class="item-field">
-        <label for="description1">Descrição</label>
-        <input
-            type="text"
-            id="description1"
-            name="description"
-            placeholder="Espada longa e afiada"
-        >
-    </div>
-
-    <span></span>
-
-</div>
-        </div>
-
-        <button type="button" id="addItem"><i class="fa-solid fa-plus"></i>Adicionar novo item</button>
-            <br><br>
-            <button type="submit"><i class="fa-regular fa-floppy-disk"></i>Salvar Ficha</button>
-        </fieldset>
-    </form>
-    </main>
-
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
