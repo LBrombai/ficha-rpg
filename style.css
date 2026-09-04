@@ -40,6 +40,7 @@ form {
 }
 
 fieldset{
+    min-width: 0;
     margin: 10px;
     padding: 20px;
     border: 1px solid #33322E;
@@ -49,13 +50,12 @@ fieldset{
 
 legend{
     font-size: 20px;
-    font-weight: 600;
     padding: 10px;
     font-weight: 700;
 }
 
 label{
-    font-size: 16;
+    font-size: 16px;
     font-weight: 500;
     display: block;
     margin-bottom: 10px;
@@ -100,5 +100,166 @@ button{
     background-color: #0A0A0A;
     color: #85817E;
     border: 1px solid #33322E;
+
+}
+
+#foto{
+    max-width: 100%;
+}
+
+.attributes-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.attributes-header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.attributes-header > :nth-child(1) {
+    flex: 1;
+}
+
+.attributes-header > :nth-child(2) {
+    flex: 3;
+}
+
+.attributes-header > :nth-child(3) {
+    flex: 0.5;
+}
+
+.attribute-row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.attribute-row > :nth-child(1) {
+    flex: 1;
+}
+
+.attribute-row > :nth-child(2) {
+    flex: 3;
+}
+
+.attribute-row > :nth-child(3) {
+    flex: 0.5;
+}
+
+.items-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.items-header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.items-header > :nth-child(1){
+    flex: 0.3;
+}
+
+.items-header > :nth-child(2){
+    flex: 2;
+}
+
+.items-header > :nth-child(3){
+    flex: 0.5;
+}
+
+.items-header > :nth-child(4){
+    flex: 3;
+}
+
+.items-header > :nth-child(5){
+    flex: 0.5;
+}
+
+.item-row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-row > :nth-child(1){
+    flex: 0.3;
+}
+
+.item-row > :nth-child(2){
+    flex: 2;
+}
+
+.item-row > :nth-child(3){
+    flex: 0.5;
+}
+
+.item-row > :nth-child(4){
+    flex: 3;
+}
+
+.item-row > :nth-child(5){
+    flex: 0.5;
+}
+
+.item-field{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item-field input{
+    width: 100%;
+}
+
+.item-field label{
+    display: none;
+}
+
+
+@media (max-width: 510px) {
+
+    header{
+        font-size: 24px;
+    }
+
+    .item-row{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .item-row > * {
+        flex:none;
+    }
+
+    .item-field label{
+        display: block;
+    }
+
+    .items-header{
+        display: none;
+    }
+
+
+    .attribute-row{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .attributes-header{
+        display: none;
+    }
+}
+
+@media (max-width: 350px) {
+
+    header {
+        font-size: 20px;
+    }
 
 }

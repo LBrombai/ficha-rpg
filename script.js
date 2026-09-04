@@ -5,7 +5,7 @@ const ageError = document.querySelector("#ageError")
 const attributeError = document.querySelector("#attributeError")
 const foto = document.querySelector("#foto")
 const photoError = document.querySelector("#photoError")
-const itemsTable = document.querySelector("#itemsTable")
+const itemsContainer = document.querySelector(".items-container")
 const addItem = document.querySelector("#addItem")
 
 formulario.addEventListener("submit", function(event){
@@ -59,78 +59,103 @@ formulario.addEventListener("submit", function(event){
 //Add Item Button
 
 let i = 2
+let newId = 2
 
 addItem.addEventListener("click", function(){
-    const newLine = document.createElement("tr")
-    const newCell = document.createElement("th")
-    const itemCell = document.createElement("td")
+
+    const newLine = document.createElement("div")
+    newLine.classList.add("item-row")
+
+    const newCell = document.createElement("span")
+
     const newInput = document.createElement("input")
 
-    const newQtdTd = document.createElement("td")
     const newQtdInp = document.createElement("input")
 
-    const newDescriptionTd = document.createElement("td")
     const newDescriptionInp = document.createElement("input")
-
-    const newRemoveTd = document.createElement("td")
-    
-    
     
     const newRemoveButton = document.createElement("button")
     const trashIcon = document.createElement("i")
+
+    const newItemField = document.createElement("div")
+    const newQtdField = document.createElement("div")
+    const newDescriptionField = document.createElement("div")
+
+    const itemLabel = document.createElement("label")
+    const qtdLabel = document.createElement("label")
+    const descriptionLabel = document.createElement("label")
+
+    itemLabel.textContent = "Nome"
+    qtdLabel.textContent = "Quantidade"
+    descriptionLabel.textContent = "Descrição"
+    
+    
     newRemoveButton.setAttribute("type", "button")
     trashIcon.classList.add("fa-solid", "fa-trash")
     newRemoveButton.appendChild(trashIcon)
     newRemoveButton.append("Remover")
-    newRemoveTd.appendChild(newRemoveButton)
-    newLine.appendChild(newRemoveTd)
 
+    newItemField.classList.add("item-field")
+    newQtdField.classList.add("item-field")
+    newDescriptionField.classList.add("item-field")
 
-    newCell.setAttribute("scope", "row")
-
-    let newIdNumber = i
+    
+    
+    let newIdNumber = newId++
     newCell.textContent = i++
     
     newInput.setAttribute("type", "text")
     newInput.setAttribute("placeholder", "Adicione um item")
     newInput.setAttribute("name", "item")
     newInput.setAttribute("id", "item" + newIdNumber)
-
+    
     newQtdInp.setAttribute("type", "number")
     newQtdInp.setAttribute("name", "quantity")
     newQtdInp.setAttribute("id", "quantity" + newIdNumber)
     newQtdInp.setAttribute("min", "0")
     newQtdInp.setAttribute("max", "99")
     newQtdInp.value = 0
-
+    
     newDescriptionInp.setAttribute("type", "text")
     newDescriptionInp.setAttribute("name", "description")
     newDescriptionInp.setAttribute("id", "description" + newIdNumber)
     newDescriptionInp.setAttribute("placeholder", "Descrição do item")
 
-  
+    itemLabel.setAttribute("for", "item" + newIdNumber)
+    qtdLabel.setAttribute("for", "quantity" + newIdNumber)
+    descriptionLabel.setAttribute("for", "description" + newIdNumber)
+    
+    
+    
 
 
-    console.log(trashIcon.className)
+    newItemField.appendChild(itemLabel)
+    newItemField.appendChild(newInput)
 
+    newQtdField.appendChild(qtdLabel)
+    newQtdField.appendChild(newQtdInp)
 
-    itemCell.appendChild(newInput)
+    newDescriptionField.appendChild(descriptionLabel)
+    newDescriptionField.appendChild(newDescriptionInp)
+
     newLine.appendChild(newCell)
+    newLine.appendChild(newItemField)
+    newLine.appendChild(newQtdField)
+    newLine.appendChild(newDescriptionField)
+    newLine.appendChild(newRemoveButton)
 
-    newLine.appendChild(itemCell)
+    itemsContainer.appendChild(newLine)
 
-    newQtdTd.appendChild(newQtdInp)
-    newLine.appendChild(newQtdTd)
-
-    newDescriptionTd.appendChild(newDescriptionInp)
-    newLine.appendChild(newDescriptionTd)
-
-
-
-
-    itemsTable.appendChild(newLine)
+    
+    
+    
+    
 
 
-    newRemoveButton.addEventListener("click", () => newRemoveButton.parentElement.parentElement.remove())
+    newRemoveButton.addEventListener("click", () => {
+        newRemoveButton.parentElement.remove()
+        i--
+    })
+
 })
 

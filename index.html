@@ -81,82 +81,164 @@
 
 
 
-        <fieldset>
+<fieldset>
 
-            <legend>Atributos</legend>
+    <legend>Atributos</legend>
 
-            <p id="attributeError"></p>
+    <p id="attributeError"></p>
 
-        <table>
+    <div class="attributes-container">
 
-                <tr>
-                    <th>Atributo</th>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                </tr>
+        <div class="attributes-header">
+            <span>Atributo</span>
+            <span>Descrição</span>
+            <span>Valor</span>
+        </div>
 
-                <tr>
-                    <th scope="row">Constituição:</th>
-                    <td>Determina saúde e resistência</td>
-                    <td><input type="number" class="attribute" name="constituicao" min="1" max="20" value="10" required></td>
-                </tr>
+        <div class="attribute-row">
+            <span>Constituição:</span>
+            <span>Determina saúde e resistência</span>
+            <input
+                type="number"
+                class="attribute"
+                name="constituicao"
+                min="1"
+                max="20"
+                value="10"
+                required
+            >
+        </div>
 
-                <tr>
-                    <th scope="row">Força:</th>
-                    <td>Determina poder físico</td>
-                    <td><input type="number" class="attribute" name="forca" min="1" max="20" value="10" required></td>
-                </tr>
+        <div class="attribute-row">
+            <span>Força:</span>
+            <span>Determina poder físico</span>
+            <input
+                type="number"
+                class="attribute"
+                name="forca"
+                min="1"
+                max="20"
+                value="10"
+                required
+            >
+        </div>
 
-                <tr>
-                    <th scope="row">Destreza:</th>
-                    <td>Determina agilidade e precisão</td>
-                    <td><input type="number" class="attribute" name="destreza" min="1" max="20" value="10" required></td>
-                </tr>
+        <div class="attribute-row">
+            <span>Destreza:</span>
+            <span>Determina agilidade e precisão</span>
+            <input
+                type="number"
+                class="attribute"
+                name="destreza"
+                min="1"
+                max="20"
+                value="10"
+                required
+            >
+        </div>
 
-                <tr>
-                    <th scope="row">Inteligência:</th>
-                    <td>Determina poder mágico</td>
-                    <td><input type="number" class="attribute" name="inteligencia" min="1" max="20" value="10" required></td>
-                </tr>
+        <div class="attribute-row">
+            <span>Inteligência:</span>
+            <span>Determina poder mágico</span>
+            <input
+                type="number"
+                class="attribute"
+                name="inteligencia"
+                min="1"
+                max="20"
+                value="10"
+                required
+            >
+        </div>
 
-                <tr>
-                    <th scope="row">Sabedoria:</th>
-                    <td>Determina percepção e intuição</td>
-                    <td><input type="number" class="attribute" name="sabedoria" min="1" max="20" value="10" required></td>
-                </tr>
+        <div class="attribute-row">
+            <span>Sabedoria:</span>
+            <span>Determina percepção e intuição</span>
+            <input
+                type="number"
+                class="attribute"
+                name="sabedoria"
+                min="1"
+                max="20"
+                value="10"
+                required
+            >
+        </div>
 
-                <tr>
-                    <th scope="row">Carisma:</th>
-                    <td>Determina persuasão e presença</td>
-                    <td><input type="number" class="attribute" name="carisma" min="1" max="20" value="10" required></td>
-                </tr>
+        <div class="attribute-row">
+            <span>Carisma:</span>
+            <span>Determina persuasão e presença</span>
+            <input
+                type="number"
+                class="attribute"
+                name="carisma"
+                min="1"
+                max="20"
+                value="10"
+                required
+            >
+        </div>
 
-            </table>
-        </fieldset>
+    </div>
+
+</fieldset>
 
         <fieldset>
 
             <legend>Itens</legend>
 
 
-        <table id="itemsTable">
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Quantidade</th>
-            <th scope="col">Descrição</th>
-            <th scope="col">Remover</th>
-            </tr>
+        <div class="items-container">
 
-            <tr>
-                <th scope="row">1</th>
-                <td><input type="text" id="item1" name="item" placeholder="Ex. Espada Longa"></td>
-                <td><input type="number" id="quantity1" name="quantity" min="0" max="99" value="0"></td>
-                <td><input type="text" id="description1" name="description" placeholder="Espada longa e afiada"></td>
-                <td></td>
-            </tr>
+            <div class="items-header">
+            <span>#</span>
+            <span>Nome</span>
+            <span>Quantidade</span>
+            <span>Descrição</span>
+            <span>Remover</span>
+            </div>
 
-        </table>
+            <div class="item-row">
+
+    <span>1</span>
+
+    <div class="item-field">
+        <label for="item1">Nome</label>
+        <input
+            type="text"
+            id="item1"
+            name="item"
+            placeholder="Ex. Espada Longa"
+        >
+    </div>
+
+    <div class="item-field">
+        <label for="quantity1">Quantidade</label>
+        <input
+            type="number"
+            id="quantity1"
+            name="quantity"
+            min="0"
+            max="99"
+            value="0"
+        >
+    </div>
+
+    <div class="item-field">
+        <label for="description1">Descrição</label>
+        <input
+            type="text"
+            id="description1"
+            name="description"
+            placeholder="Espada longa e afiada"
+        >
+    </div>
+
+    <span></span>
+
+</div>
+        </div>
+
         <button type="button" id="addItem"><i class="fa-solid fa-plus"></i>Adicionar novo item</button>
             <br><br>
             <button type="submit"><i class="fa-regular fa-floppy-disk"></i>Salvar Ficha</button>
