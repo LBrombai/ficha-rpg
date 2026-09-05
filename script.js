@@ -66,7 +66,6 @@ function updateItemNumbers() {
     })
 }
 
-let i = 2
 let newId = 2
 
 addItem.addEventListener("click", function () {
@@ -109,7 +108,6 @@ addItem.addEventListener("click", function () {
     newDescriptionField.classList.add("item-field")
 
     let newIdNumber = newId++
-    newCell.textContent = i++
 
     newInput.setAttribute("type", "text")
     newInput.setAttribute("placeholder", "Adicione um item")
@@ -170,6 +168,7 @@ addItem.addEventListener("click", function () {
     newLine.appendChild(newRemoveButton)
 
     itemsContainer.appendChild(newLine)
+    updateItemNumbers()
 
     upButton.addEventListener("click", () => {
         newQtdInp.stepUp()

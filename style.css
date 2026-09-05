@@ -31,7 +31,7 @@ header {
 }
 
 header h1 {
-    font-size: 32px;
+    font-size: 60px;
     font-weight: 700;
     letter-spacing: 2px;
     text-align: center;
@@ -512,7 +512,7 @@ footer {
     }
 
     header h1 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     header p {
@@ -570,6 +570,10 @@ footer {
 @media (max-width: 350px) {
     header {
         font-size: 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
     }
 }
 
